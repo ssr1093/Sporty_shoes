@@ -34,6 +34,7 @@ public class Admin {
 	@Column(unique = true)
 	private String email;
 	private String password;
+	@Column( nullable = false, columnDefinition = "BOOLEAN DEFAULT false" ) 
 	private boolean enabled;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

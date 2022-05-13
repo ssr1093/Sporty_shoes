@@ -1,6 +1,5 @@
 package com.sportyshoes.entity;
 
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +19,7 @@ public class Role {
 	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long role_id;
+	private String name;
 	public long getRole_id() {
 		return role_id;
 	}
@@ -32,6 +32,6 @@ public class Role {
 	public void setName(String name) {
 		this.name = name;
 	}
-	private String name;
+	
 	
 }
