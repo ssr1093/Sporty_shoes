@@ -9,13 +9,17 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.sportyshoes.entity.Admin;
+import com.sportyshoes.entity.User;
 import com.sportyshoes.entity.Role;
 
 
 public class MyAdminDetails implements UserDetails{
-	private Admin admin;
-	public MyAdminDetails(Admin admin) {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private User admin;
+	public MyAdminDetails(User admin) {
 		this.admin=admin;
 	}
 	@Override

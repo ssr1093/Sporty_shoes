@@ -22,7 +22,7 @@ import lombok.Setter;
 @Table(name = "admin")
 @Getter
 @Setter
-public class Admin {
+public class User {
 
 
 	@Id

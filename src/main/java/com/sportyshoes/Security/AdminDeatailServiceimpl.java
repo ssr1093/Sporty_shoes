@@ -5,18 +5,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import com.sportyshoes.entity.Admin;
-import com.sportyshoes.repository.AdminRepository;
+import com.sportyshoes.entity.User;
+import com.sportyshoes.repository.UserRepo;
 
 public class AdminDeatailServiceimpl implements UserDetailsService {
 
 	@Autowired
-	private AdminRepository adminrepository;
+	private UserRepo adminrepository;
 	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		
-		Admin admin = adminrepository.getAdminByEmail(email);
+		User admin = adminrepository.getUserByEmail(email);
 		if(admin == null)
 		{
 			throw new UsernameNotFoundException("User not found, Please Register");
