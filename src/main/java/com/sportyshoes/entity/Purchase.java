@@ -37,16 +37,16 @@ public class Purchase {
 	private Date purchaseDate;
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinTable(name = "product_purchase", joinColumns = {@JoinColumn(referencedColumnName = "pid")},
-	inverseJoinColumns = {@JoinColumn(referencedColumnName = "ordID")})
+	@JoinTable(name = "product_purchase", joinColumns = {@JoinColumn(name = "pid")},
+	inverseJoinColumns = {@JoinColumn(name = "ordID")})
 	private List<Products> products = new ArrayList<>();
 	
 	
 	private int ordQty;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinTable(name = "user_purchase", joinColumns = {@JoinColumn(referencedColumnName = "custid")},
-	inverseJoinColumns = {@JoinColumn(referencedColumnName = "ordID")})
+	@JoinTable(name = "user_purchase", joinColumns = {@JoinColumn(name = "custid")},
+	inverseJoinColumns = {@JoinColumn(name = "ordID")})
 	private List<User> users = new ArrayList<>();
 	
 	

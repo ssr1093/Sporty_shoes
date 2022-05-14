@@ -20,7 +20,7 @@ public class Products {
 //	@lob --> large object to database annotation
 //    @Column(name = "IMAGE")
 //    private byte[] image;
-	
+	@Column(nullable = false )
 	private double productprice;
 	private String productcategory;
 	private String productbrand;
