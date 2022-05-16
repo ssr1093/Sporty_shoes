@@ -35,8 +35,8 @@ public class Purchase {
 	private Date purchaseDate;
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinTable(name = "product_purchase", joinColumns = {@JoinColumn(name = "pid")},
-	inverseJoinColumns = {@JoinColumn(name = "ordID")})
+	@JoinTable(name = "product_purchase", joinColumns = {@JoinColumn(name = "productid")},
+	inverseJoinColumns = {@JoinColumn(name = "purcahseid")})
 	private List<Products> products = new ArrayList<>();
 	
 	
@@ -44,7 +44,7 @@ public class Purchase {
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinTable(name = "user_purchase", joinColumns = {@JoinColumn(name = "custid")},
-	inverseJoinColumns = {@JoinColumn(name = "ordID")})
+	inverseJoinColumns = {@JoinColumn(name = "purcahseid")})
 	private List<User> users = new ArrayList<>();
 
 	public long getPurcahseid() {

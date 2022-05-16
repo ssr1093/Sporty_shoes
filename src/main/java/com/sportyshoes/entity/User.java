@@ -36,13 +36,12 @@ public class User {
 	@Column(unique = true)
 	private String email;
 	private String password;
-	@Column( columnDefinition = "BOOLEAN DEFAULT false" ) 
+	@ColumnDefault(value = "enabled") 
 	private boolean enabled;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name ="customerroles", joinColumns = {@JoinColumn(name = "custid")},
 			inverseJoinColumns = {@JoinColumn(name = "roleid")})
-	 @ColumnDefault(value = "user")
 	private Set<Role> roles = new HashSet<>();
 
 	

@@ -40,10 +40,12 @@ public class websecurityconfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/").hasAnyAuthority("USER", "CREATOR", "EDITOR", "ADMIN")
-				.antMatchers("/new").hasAnyAuthority("ADMIN", "CREATOR").antMatchers("/edit/**")
-				.hasAnyAuthority("ADMIN", "EDITOR").antMatchers("/delete/**").hasAuthority("ADMIN")
-				.antMatchers("/h2-console/**").permitAll().anyRequest().authenticated().and().formLogin().permitAll()
+		http.authorizeRequests().antMatchers("/").hasAnyAuthority("USER", "ADMIN")
+				.antMatchers("/new").hasAnyAuthority("ADMIN")
+				.antMatchers("/edit/**").hasAnyAuthority("ADMIN")
+				.antMatchers("/delete/**").hasAuthority("ADMIN")
+				.antMatchers("/purchase").hasAuthority("USER")
+				.anyRequest().authenticated().and().formLogin().permitAll()
 				.and().logout().permitAll().and().exceptionHandling().accessDeniedPage("/403");
 
 		http.csrf().disable();

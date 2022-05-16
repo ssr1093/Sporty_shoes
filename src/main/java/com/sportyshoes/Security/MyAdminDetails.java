@@ -18,13 +18,13 @@ public class MyAdminDetails implements UserDetails{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private User admin;
-	public MyAdminDetails(User admin) {
-		this.admin=admin;
+	private User user;
+	public MyAdminDetails(User user) {
+		this.user=user;
 	}
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		Set<Role> roles =admin.getRoles();
+		Set<Role> roles =user.getRoles();
 	List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 		
 		for(Role role:roles) {
@@ -37,13 +37,13 @@ public class MyAdminDetails implements UserDetails{
 	@Override
 	public String getPassword() {
 		// TODO Auto-generated method stub
-		return admin.getPassword();
+		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return admin.getEmail();
+		return user.getEmail();
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class MyAdminDetails implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return admin.isEnabled();
+		return user.isEnabled();
 	}
 
 }

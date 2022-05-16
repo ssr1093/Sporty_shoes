@@ -11,17 +11,17 @@ import com.sportyshoes.repository.UserRepo;
 public class AdminDeatailServiceimpl implements UserDetailsService {
 
 	@Autowired
-	private UserRepo adminrepository;
+	private UserRepo userrepo;
 	
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		
-		User admin = adminrepository.getUserByEmail(email);
-		if(admin == null)
+		User user = userrepo.getUserByEmail(email);
+		if(user == null)
 		{
 			throw new UsernameNotFoundException("User not found, Please Register");
 		}
-		return new MyAdminDetails(admin);
+		return new MyAdminDetails(user);
 	}
 
 }

@@ -10,9 +10,7 @@ import com.sportyshoes.entity.User;
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {
 		
-	@Query("SELECT u from user u where u.email = :email")
+	@Query("SELECT u from user where u.email = :email")
 	public User getUserByEmail(@Param("email") String email);
 	
-	
-	public User findByUserId(int userId);	
 }
