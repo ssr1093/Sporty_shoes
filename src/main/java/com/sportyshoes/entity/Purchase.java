@@ -16,8 +16,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import org.apache.el.parser.AstFalse;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,7 +27,7 @@ public class Purchase {
 
 	@Id
 	@Column(name = "purcahseid", nullable = false)
-	@GeneratedValue(strategy = GenerationType.AUTO.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long purcahseid;
 	@Column(nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,6 +46,54 @@ public class Purchase {
 	@JoinTable(name = "user_purchase", joinColumns = {@JoinColumn(name = "custid")},
 	inverseJoinColumns = {@JoinColumn(name = "ordID")})
 	private List<User> users = new ArrayList<>();
+
+	public long getPurcahseid() {
+		return purcahseid;
+	}
+
+	public void setPurcahseid(long purcahseid) {
+		this.purcahseid = purcahseid;
+	}
+
+	public long getPurcahsebillNo() {
+		return purcahsebillNo;
+	}
+
+	public void setPurcahsebillNo(long purcahsebillNo) {
+		this.purcahsebillNo = purcahsebillNo;
+	}
+
+	public Date getPurchaseDate() {
+		return purchaseDate;
+	}
+
+	public void setPurchaseDate(Date purchaseDate) {
+		this.purchaseDate = purchaseDate;
+	}
+
+	public List<Products> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Products> products) {
+		this.products = products;
+	}
+
+	public int getOrdQty() {
+		return ordQty;
+	}
+
+	public void setOrdQty(int ordQty) {
+		this.ordQty = ordQty;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
 	
 	
 	}

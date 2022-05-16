@@ -32,15 +32,15 @@ public class Purchaseserviceimpl implements Purchaseservice {
 	}
 
 	@Override
-	public Purchase findByPurchaseId(int purchaseId) {
+	public Purchase findByPurchaseId(long purchaseid) {
 		// TODO Auto-generated method stub
-		return purchaserepo.findByPurchaseId(purchaseId);
+		return purchaserepo.findByPurchaseId(purchaseid);
 	}
 
 	@Override
-	public List<Products> findByProductCategory(String productCategory) {
+	public List<Products> findByProductCategory(String productcategory) {
 		// TODO Auto-generated method stub
-		return purchaserepo.findByProductCategory(productCategory);
+		return purchaserepo.findByProductCategory(productcategory);
 	}
 
 	@Override

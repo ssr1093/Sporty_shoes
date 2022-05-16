@@ -11,7 +11,7 @@ public interface Purchaseservice {
 	
 	public Purchase createPurchase(Purchase purchase);
 	public List<Purchase> getAllPurchases();
-	public Purchase findByPurchaseId(int purchaseId);
-	public List<Products> findByProductCategory(String productCategory);
+	public Purchase findByPurchaseId(long purchaseid);
+	public List<Products> findByProductCategory(String productcategory);
 	public List<Purchase> findByPurchaseDate(Date purchaseDate);
 }

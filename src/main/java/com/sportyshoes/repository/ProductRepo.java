@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import com.sportyshoes.entity.Products;
 
 @Repository
-public interface ProductRepo extends JpaRepository<Products, Integer>{
-	public void deleteByProductId(int productid); 
-	public Products findByProductId(int productid);
+public interface ProductRepo extends JpaRepository<Products, Long>{
+	public void deleteByProductId(long productid); 
+	public Products findByProductId(long productid);
 	public List<Products> findByProductCategory(String productcategory);
 }

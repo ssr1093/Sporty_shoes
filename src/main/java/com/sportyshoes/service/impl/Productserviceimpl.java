@@ -32,27 +32,28 @@ public class Productserviceimpl implements ProductService {
 	}
 
 	@Override
-	public void deleteByProductId(int productId) {
+	public void deleteByProductId(long productid) {
 		// TODO Auto-generated method stub
-			productrepo.deleteById(productId);
+		productrepo.deleteByProductId(productid);
+	}
+
+
+	@Override
+	public Products updateProduct(Products products) {
+		// TODO Auto-generated method stub
+		return productrepo.save(products);
 	}
 
 	@Override
-	public Products findByProductId(int productId) {
+	public List<Products> findByProductCategory(String productcategory) {
 		// TODO Auto-generated method stub
-		return productrepo.findByProductId(productId);
+		return productrepo.findByProductCategory(productcategory);
 	}
 
 	@Override
-	public Products updateProduct(Products product) {
+	public Products findByProductId(long productid) {
 		// TODO Auto-generated method stub
-		return productrepo.save(product);
-	}
-
-	@Override
-	public List<Products> findByProductCategory(String productCategory) {
-		// TODO Auto-generated method stub
-		return productrepo.findByProductCategory(productCategory);
+		return productrepo.findByProductId(productid);
 	}
 
 }

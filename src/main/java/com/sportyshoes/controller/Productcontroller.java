@@ -26,9 +26,9 @@ public class Productcontroller {
 	private ProductService productservice;
 	
 	@PostMapping("/product")
-	public Products createProduct(@RequestBody Products product) {
+	public Products createProduct(@RequestBody Products products) {
 		
-		return productservice.createProduct(product);
+		return productservice.createProduct(products);
 	}
 
     @GetMapping("/products")
@@ -37,15 +37,15 @@ public class Productcontroller {
 		return productservice.getAllProducts();
 	}
     
-    @DeleteMapping(value = "/product/{productId}")
-    public void deleteByProductId(@PathVariable int productId) {
-    	productservice.deleteByProductId(productId);
+    @DeleteMapping(value = "/product/{productid}")
+    public void deleteByProductId(@PathVariable long productid) {
+    	productservice.deleteByProductId(productid);
     }
     
-    @GetMapping(value = "/product/{productId}")
-    public Products findByProductId(@PathVariable int productId) {
+    @GetMapping(value = "/product/{productid}")
+    public Products findByProductId(@PathVariable long productid) {
     	
-    	return productservice.findByProductId(productId);
+    	return productservice.findByProductId(productid);
     }
     
     @PutMapping("/product")
@@ -54,9 +54,9 @@ public class Productcontroller {
     	return productservice.updateProduct(product);
     }
     
-    @GetMapping(value = "/products/{productCategory}")
-    public List<Products> findByProductCategory(@PathVariable String productCategory) {
+    @GetMapping(value = "/products/{productcategory}")
+    public List<Products> findByProductCategory(@PathVariable String productcategory) {
     	
-    	return productservice.findByProductCategory(productCategory);
+    	return productservice.findByProductCategory(productcategory);
     }
 }

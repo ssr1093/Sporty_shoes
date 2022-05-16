@@ -15,6 +15,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,14 +36,17 @@ public class User {
 	@Column(unique = true)
 	private String email;
 	private String password;
-	@Column( nullable = false, columnDefinition = "BOOLEAN DEFAULT false" ) 
+	@Column( columnDefinition = "BOOLEAN DEFAULT false" ) 
 	private boolean enabled;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinTable(name ="customerroles", joinColumns = {@JoinColumn(name = "custid")},
 			inverseJoinColumns = {@JoinColumn(name = "roleid")})
+	 @ColumnDefault(value = "user")
 	private Set<Role> roles = new HashSet<>();
 
+	
+	
 	public long getCustid() {
 		return custid;
 	}

@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Products {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long productid;
 	@Column(nullable = false )
 	private String productName;
@@ -24,4 +24,35 @@ public class Products {
 	private double productprice;
 	private String productcategory;
 	private String productbrand;
+	public long getProductid() {
+		return productid;
+	}
+	public void setProductid(long productid) {
+		this.productid = productid;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public double getProductprice() {
+		return productprice;
+	}
+	public void setProductprice(double productprice) {
+		this.productprice = productprice;
+	}
+	public String getProductcategory() {
+		return productcategory;
+	}
+	public void setProductcategory(String productcategory) {
+		this.productcategory = productcategory;
+	}
+	public String getProductbrand() {
+		return productbrand;
+	}
+	public void setProductbrand(String productbrand) {
+		this.productbrand = productbrand;
+	}
+	
 }

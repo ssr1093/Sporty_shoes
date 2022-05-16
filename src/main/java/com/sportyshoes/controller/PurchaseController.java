@@ -36,18 +36,18 @@ public class PurchaseController {
 		return purchaseservice.getAllPurchases();
 	}
 
-    @GetMapping(value = "/purchase/{purchaseId}")
-    public Purchase findByPurchaseId(@PathVariable int purchaseId) {
+    @GetMapping(value = "/purchase/{purchaseid}")
+    public Purchase findByPurchaseId(@PathVariable long purchaseid) {
     	
-    	return purchaseservice.findByPurchaseId(purchaseId);
+    	return purchaseservice.findByPurchaseId(purchaseid);
     }
     
 
     
     @GetMapping(value = "/purchases/{purchaseCategory}")
-    public List<Products> findByProductCategory(@PathVariable String purchaseCategory) {
+    public List<Products> findByProductCategory(@PathVariable String purchasecategory) {
     	
-    	return purchaseservice.findByProductCategory(purchaseCategory);
+    	return purchaseservice.findByProductCategory(purchasecategory);
     }
 
     @GetMapping(value = "/purchases/{purchaseDate}")
