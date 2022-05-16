@@ -28,10 +28,10 @@ public class Purchase {
 	@Id
 	@Column(name = "purcahseid", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long purcahseid;
+	private long purchaseid;
 	@Column(nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long purcahsebillNo;
+	private long purchasebillNo;
 	private Date purchaseDate;
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -48,19 +48,19 @@ public class Purchase {
 	private List<User> users = new ArrayList<>();
 
 	public long getPurcahseid() {
-		return purcahseid;
+		return getPurcahseid();
 	}
 
 	public void setPurcahseid(long purcahseid) {
-		this.purcahseid = purcahseid;
+		this.purchaseid = purcahseid;
 	}
 
 	public long getPurcahsebillNo() {
-		return purcahsebillNo;
+		return getPurcahsebillNo();
 	}
 
 	public void setPurcahsebillNo(long purcahsebillNo) {
-		this.purcahsebillNo = purcahsebillNo;
+		this.purchasebillNo = purcahsebillNo;
 	}
 
 	public Date getPurchaseDate() {

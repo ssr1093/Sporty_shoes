@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.sportyshoes.entity.Products;
@@ -14,6 +15,7 @@ import com.sportyshoes.repository.Purchaserepo;
 import com.sportyshoes.service.Purchaseservice;
 @Service
 @Transactional
+@Component
 public class Purchaseserviceimpl implements Purchaseservice {
 
 	@Autowired
@@ -34,13 +36,13 @@ public class Purchaseserviceimpl implements Purchaseservice {
 	@Override
 	public Purchase findByPurchaseId(long purchaseid) {
 		// TODO Auto-generated method stub
-		return purchaserepo.findByPurchaseId(purchaseid);
+		return purchaserepo.findByPurchaseid(purchaseid);
 	}
 
 	@Override
 	public List<Products> findByProductCategory(String productcategory) {
 		// TODO Auto-generated method stub
-		return purchaserepo.findByProductCategory(productcategory);
+		return purchaserepo.findByProductcategory(productcategory);
 	}
 
 	@Override

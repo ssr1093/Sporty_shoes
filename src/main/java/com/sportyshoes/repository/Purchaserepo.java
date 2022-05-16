@@ -13,9 +13,9 @@ import com.sportyshoes.entity.Purchase;
 @Repository
 public interface Purchaserepo extends JpaRepository<Purchase, Long> {
 
-	public Purchase findByPurchaseId(long purchaseId);
+	public Purchase findByPurchaseid(long purchaseId);
 	public List<Purchase> findByPurchaseDate(Date purchaseDate);
-	@Query(value="select * from Purchase WHERE products.productCategory= :productCategory", nativeQuery = true)
-	public List<Products> findByProductCategory(@Param("productCategory") String productcategory);
+	@Query(value="select * from Purchase WHERE products.productcategory= :productcategory", nativeQuery = true)
+	public List<Products> findByProductcategory(@Param("productcategory") String productcategory);
 
 }
