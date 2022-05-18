@@ -16,17 +16,13 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "Purchase")
-@Getter
-@Setter
+
 public class Purchase {
 
 	@Id
-	@Column(name = "purcahseid", nullable = false)
+	@Column(name = "purchaseid", nullable = false)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long purchaseid;
 	@Column(nullable = false)
@@ -44,8 +40,24 @@ public class Purchase {
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinTable(name = "user_purchase", joinColumns = {@JoinColumn(name = "custid")},
-	inverseJoinColumns = {@JoinColumn(name = "purcahseid")})
+	inverseJoinColumns = {@JoinColumn(name = "purchaseid")})
 	private List<User> users = new ArrayList<>();
+	
+
+	public Purchase() {
+	
+	}
+
+	public Purchase(long purchaseid, long purchasebillNo, Date purchaseDate, List<Products> products, int ordQty,
+			List<User> users) {
+		super();
+		this.purchaseid = purchaseid;
+		this.purchasebillNo = purchasebillNo;
+		this.purchaseDate = purchaseDate;
+		this.products = products;
+		this.ordQty = ordQty;
+		this.users = users;
+	}
 
 	public long getPurcahseid() {
 		return getPurcahseid();

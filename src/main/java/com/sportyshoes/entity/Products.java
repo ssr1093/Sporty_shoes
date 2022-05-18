@@ -24,6 +24,20 @@ public class Products {
 	private double productprice;
 	private String productcategory;
 	private String productbrand;
+	
+	
+	public Products() {
+		
+	}
+	public Products(long productid, String productName, double productprice, String productcategory,
+			String productbrand) {
+		super();
+		this.productid = productid;
+		this.productName = productName;
+		this.productprice = productprice;
+		this.productcategory = productcategory;
+		this.productbrand = productbrand;
+	}
 	public long getProductid() {
 		return productid;
 	}

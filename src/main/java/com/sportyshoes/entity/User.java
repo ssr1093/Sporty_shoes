@@ -1,6 +1,7 @@
 package com.sportyshoes.entity;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -34,7 +35,9 @@ public class User {
 	private String first_name;
 	private String last_name;
 	@Column(unique = true)
+	
 	private String email;
+	@Column(nullable = false)
 	private String password;
 	@ColumnDefault(value = "enabled") 
 	private boolean enabled;
@@ -46,6 +49,21 @@ public class User {
 
 	
 	
+	public User(String string, String string2, String string3, String string4, List<Role> list) {
+	}
+
+	public User(long custid, String first_name, String last_name, String email, String password, boolean enabled,
+			Set<Role> roles) {
+		super();
+		this.custid = custid;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.email = email;
+		this.password = password;
+		this.enabled = enabled;
+		this.roles = roles;
+	}
+
 	public long getCustid() {
 		return custid;
 	}
